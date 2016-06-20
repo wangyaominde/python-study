@@ -1,0 +1,3 @@
+def hello():  //定义hello函数
+   print("hello!");  //执行输出hello！
+hello();   //运行hello函数
