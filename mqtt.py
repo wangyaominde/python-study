@@ -1,4 +1,5 @@
 #-*-coding:utf-8-*-   
+#基于mqtt的client程序，可以订阅消息
 import paho.mqtt.client as mqtt    
     
 # 当连接上服务器后回调此函数    
