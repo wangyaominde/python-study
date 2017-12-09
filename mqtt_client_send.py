@@ -3,13 +3,16 @@
 import paho.mqtt.client as mqtt    
 import os
 import time
+
+
 client = mqtt.Client()
 client.username_pw_set(username="#####", password="#####")
 client.connect("104.207.158.9", 1883, 60)   
+
 while 1:
 	p=os.popen("ping -c1 www.baidu.com | awk '{print$8}' | grep 'time'")
-	payload = p.read()
+	payload = p.read()#将控制台得到的数据进行转化
 	print(payload)
-	client.publish("ping", payload , qos=1, retain=False)
-	time.sleep(300)
+	client.publish("ping", payload , qos=1, retain=False) #对于ping订阅发送当前获取的延迟时间
+	time.sleep(300)	#五分钟休眠
 client.loop_forever() 
