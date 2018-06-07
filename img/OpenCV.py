@@ -1,0 +1,16 @@
+import cv2    
+high = cv2.imread("high.jpg",cv2.IMREAD_COLOR)
+low = cv2.imread("low.jpg",cv2.IMREAD_COLOR)  
+#im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)   #转换了灰度化
+print ("high:\n")  
+print (high.shape)
+print (high.size)
+print (high.dtype)
+print ("low:\n")
+print (low.shape)
+print (low.size)
+print (low.dtype)
+cv2.imshow("HIGH",high)
+cv2.imshow("low",low)    
+cv2.waitKey(0) 
+cv2.destroyAllWindows()  
