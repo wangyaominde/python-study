@@ -1,5 +1,5 @@
 #coding=utf-8
-#基于PIL的像素点的图像融合
+#基于PIL的像素点的图像融合 基于pyhton2
 from PIL import Image
 import math
 import sys
