@@ -5,7 +5,7 @@ import numpy
 pic1 = input("Please input pic1:")	#输入图1的名字
 pic2 = input("Please input pic2:")	#输入图2的名字
 qz1 = eval(input('Please input pic1`s proportion:'))
-qz2 = eval(input('Please input pic1`s proportion:'))
+qz2 = eval(input('Please input pic2`s`s proportion:'))
 
 '''qz1 = input("Please input pic1`s proportion:")		#输入图1的比例
 qz2 = input("Please input pic2`s proportion:")		#输入图2的比例'''
