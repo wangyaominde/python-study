@@ -6,8 +6,8 @@ class Solution:
         """
         a = len(s)
         while a:
-            print(s[a])
             a-=1
+            print(s[a])
 
 
 
