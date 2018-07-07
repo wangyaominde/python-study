@@ -7,9 +7,12 @@ class Solution:
         a = len(s)
         while a:
             a-=1
-            print(s[a])
-
-
+            b=a
+            while b>=0:
+                if(s[a]==s[b]):
+                    if (a is not b):
+                        print(s[b:a])
+                b-=1
 
 
 
@@ -17,5 +20,5 @@ class Solution:
 
 
 a = Solution()
-s = "wasjga"
-a.lengthOfLongestSubstring(s)
+st = "abc"
+a.match(st)
