@@ -7,8 +7,8 @@ class Solution:
             while b>=0:
                 if(str[a]==str[b]):
                     if (a is not b):
-                        print(str[b:a])
-                        #return str[b:a]
+                        #print(str[b:a])
+                        return str[b:a]
                 b-=1
 
     def lengthOfLongestSubstring(self, s):
@@ -16,7 +16,7 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        print(Solution.match(s))
+        return(Solution.match(s))
         '''a = len(s)
         while a:
             a-=1
@@ -33,5 +33,5 @@ class Solution:
 
 
 a = Solution()
-s = "abca"
+s = "bbbb"
 a.lengthOfLongestSubstring(s)
