@@ -13,11 +13,11 @@ class Solution:
                 start = d[s[i]] +1
             temp = max(i-start+1,temp)
             d[s[i]] = i
-            print("d:",d,"temp:",temp)
+            print("d:",d,'\n'"temp:",temp)
         return temp
 
 a = Solution()
-s = "abcabcabc"
+s = "33123"
 print(a.lengthOfLongestSubstring(s))
 
 """a="abcabcabc"
