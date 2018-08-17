@@ -5,7 +5,6 @@ class Solution:
             for x in range(slen):
                 if s[x]==s[i]:
                     print(s[x:i])
-
 a = Solution()
-s = "abcabcbb"
+s = "bbb"
 a.lengthOfLongestSubstring(s)
