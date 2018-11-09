@@ -2,6 +2,13 @@
 
 
 class Solution:
+    def ainb(num, nums):
+        l = nums
+        if l.index(num):
+            return 1
+        else:
+            return 0
+
     def findMedianSortedArrays(self, nums1, nums2):
         """
         :type nums1: List[int]
