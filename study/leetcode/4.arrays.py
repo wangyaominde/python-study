@@ -5,3 +5,4 @@ class Solution:
         :type nums2: List[int]
         :rtype: float
         """
+        return (nums1, nums2)
