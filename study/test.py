@@ -1,24 +1,79 @@
-# -*- coding: utf-8 -*-
-
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-
-f = open(u'test.txt', 'r').read()
-wordcloud = WordCloud(background_color="white", width=1000,
-                      height=860, margin=2).generate(f)
-
-# width,height,margin可以设置图片属性
-
-# generate 可以对全部文本进行自动分词,但是他对中文支持不好,对中文的分词处理请看我的下一篇文章
-# wordcloud = WordCloud(font_path = r'D:\Fonts\simkai.ttf').generate(f)
-# 你可以通过font_path参数来设置字体集
-
-# background_color参数为设置背景颜色,默认颜色为黑色
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+import sys
 
 
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.show()
+class Example(QWidget):
 
-wordcloud.to_file('test.png')
-# 保存图片,但是在第三模块的例子中 图片大小将会按照 mask 保存
+    def __init__(self):
+        super().__init__()
+
+        self.t = 0
+
+        window = QWidget()
+        vbox = QVBoxLayout(window)
+        #vbox = QVBoxLayout(window)
+
+        self.lcdNumber = QLCDNumber()
+        button = QPushButton("测试")
+        vbox.addWidget(self.lcdNumber)
+        vbox.addWidget(button)
+
+        self.timer = QTimer()
+
+        button.clicked.connect(self.Work)
+        self.timer.timeout.connect(self.CountTime)
+
+        self.setLayout(vbox)
+        self.show()
+
+    def CountTime(self):
+        self.t += 1
+        self.lcdNumber.display(self.t)
+
+    def Work(self):
+        self.timer.start(1000)
+        self.thread = RunThread()
+        self.thread.start()
+        self.thread.trigger.connect(self.TimeStop)
+
+    def TimeStop(self):
+        self.timer.stop()
+        print("运行结束用时", self.lcdNumber.value())
+        self.t = 0
+
+
+class RunThread(QThread):
+    # python3,pyqt5与之前的版本有些不一样
+    #  通过类成员对象定义信号对象
+    # _signal = pyqtSignal(str)
+
+    trigger = pyqtSignal()
+
+    def __init__(self, parent=None):
+        super(RunThread, self).__init__()
+
+    def __del__(self):
+        self.wait()
+
+    def run(self):
+        # 处理你要做的业务逻辑，这里是通过一个回调来处理数据，这里的逻辑处理写自己的方法
+        # wechat.start_auto(self.callback)
+        # self._signal.emit(msg);  可以在这里写信号焕发
+        print(self.trigger)
+        for i in range(203300030):
+            pass
+        self.trigger.emit()
+        # self._signal.emit(msg)
+
+    def callback(self, msg):
+        # 信号焕发，我是通过我封装类的回调来发起的
+        # self._signal.emit(msg)
+        pass
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    th = Example()
+    sys.exit(app.exec_())
