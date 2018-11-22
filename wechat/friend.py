@@ -1,4 +1,5 @@
 # coding:utf-8
+
 import itchat,time,sys,xlwt
 
 file = xlwt.Workbook()
@@ -26,10 +27,10 @@ total = len(friends[1:])
 
 
 table.write(0,7,u'【共'+str(len(friends)-1)+u'位朋友，'+str(male)+u'位男性朋友，'+str(female)+u'位女性朋友，另外'+str(other)+u'位不明性别】')
-table.write(0,0,u' 【昵称】')  
+table.write(0,0,u' 【昵称】')
 table.write(0,1,u' 【备注名】')
-table.write(0,2,u' 【省份】')  
-table.write(0,3,u' 【城市】')  
+table.write(0,2,u' 【省份】')
+table.write(0,3,u' 【城市】')
 table.write(0,4,u' 【签名】')
 
 a=0

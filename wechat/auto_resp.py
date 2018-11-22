@@ -1,3 +1,5 @@
+#code by wangyaomin
+
 import itchat
 
 
