@@ -8,7 +8,7 @@ while(1):
     # 读取视频的每一帧
     _, frame = cap.read()
 
-    # 将图片从 BGR 空间转换到 HSV 空间
+    # 将图片从 RGB 空间转换到 HSV 空间
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # 定义在HSV空间中蓝色的范围
