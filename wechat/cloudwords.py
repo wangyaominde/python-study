@@ -5,10 +5,12 @@
 #有空写
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import jieba
 
 f = open(u'test.txt', 'r').read()
-wordcloud = WordCloud(background_color="white", width=1000,
-                      height=860, margin=2).generate(f)
+mytext = " ".join(jieba.cut(f))
+wordcloud = WordCloud(font_path="simsun.ttf",background_color="white", width=1000,
+                      height=860, margin=2).generate(mytext)
 
 
 plt.imshow(wordcloud)
