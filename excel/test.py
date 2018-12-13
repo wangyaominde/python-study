@@ -1,8 +1,13 @@
+# -*- coding: utf-8 -*-
 import time
 import xlrd
 import xlwt
+import os
+import sys
 
-data = xlrd.open_workbook('20181210013431-1.xls')
+print(os.path.abspath('20181210013431-1.xls'))
+
+data = xlrd.open_workbook(os.path.abspath('20181210013431-1.xls'))
 table = data.sheets()[0]
 nrows = table.nrows
 ncols = table.ncols
