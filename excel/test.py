@@ -7,7 +7,7 @@ import sys
 
 print(os.path.abspath('20181210013431-1.xls'))
 
-data = xlrd.open_workbook(os.path.abspath('20181210013431-1.xls'))
+data = xlrd.open_workbook('20181204162827-9.xls')
 table = data.sheets()[0]
 nrows = table.nrows
 ncols = table.ncols
