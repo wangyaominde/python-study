@@ -26,7 +26,7 @@ class LineEditEx(QLineEdit):
         print(e.mimeData().formats())  # 支持的所有格式
         print(e.mimeData().data('text/plain'))  # 根據mime類型取路徑 值為字節數組
         print(e.mimeData().hasText())  # 是否支持文本文檔格式
-
+        
         if e.mimeData().hasText():
             e.accept()
         else:
