@@ -17,3 +17,4 @@ for c in range(1,ncols):
         if(c%2==0):
             print(c/2)
         #print(table.col_values(c))
+os.system('pause')
