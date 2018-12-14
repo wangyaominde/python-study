@@ -19,22 +19,14 @@ class LineEditEx(QLineEdit):
 
     def dragEnterEvent(self, QDragEnterEvent):
         e = QDragEnterEvent  # type:QDragEnterEvent
-        '''print('type:', e.type())  # 事件的類型
+        print('type:', e.type())  # 事件的類型
         print('pos:', e.pos())  # 拖放位置
         print(e.mimeData().urls())  # 文檔所有的路徑
         print(e.mimeData().text())  # 文檔路徑
         print(e.mimeData().formats())  # 支持的所有格式
         print(e.mimeData().data('text/plain'))  # 根據mime類型取路徑 值為字節數組
-        print(e.mimeData().hasText())  # 是否支持文本文檔格式'''
-        data = xlrd.open_workbook(str(e.mimeData().text()))
-        table = data.sheets()[0]
-        nrows = table.nrows
-        ncols = table.ncols
+        print(e.mimeData().hasText())  # 是否支持文本文檔格式
 
-        for c in range(1,ncols):
-            if ('error-peak' in table.col_values(c) and table.col_values(c).count('error-peak')>3):
-                if(c%2==0):
-                    print(c/2)
         if e.mimeData().hasText():
             e.accept()
         else:
