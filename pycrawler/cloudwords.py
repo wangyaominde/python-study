@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-#从微信获取好友的签名，做成词云
+#词云生成
 #2018-10-17 18:02:37
-#还没开始做
-#有空写
+
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import jieba
