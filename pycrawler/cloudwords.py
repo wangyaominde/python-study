@@ -17,4 +17,3 @@ plt.axis("off")
 plt.show()
 
 wordcloud.to_file('test.png')
-# 保存图片,但是在第三模块的例子中 图片大小将会按照 mask 保存
