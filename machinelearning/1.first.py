@@ -1,9 +1,30 @@
-import numpy as np
 import tensorflow as tf
-from sklearn import datasets
-from sklearn.cross_validation import train_test_split 
+import numpy as np
 
-print(tf.__version__)
+#create data
 
-iris = datasets.load_iris()
-train_X, test_X, train_y, test_y = train_test_split(iris.data, iris.target, test_size = 0.2, random_state = 0)
+x_data = np.random.rand(100).astype(np.float32)
+y_data = x_data*0.1 + 0.5
+
+
+
+Weights = tf.Variable(tf.random_uniform([1,2], -1.0, 1.0))
+biases = tf.Variable(tf.zeros([1]))
+
+y = Weights*x_data + biases
+
+loss = tf.reduce_mean(tf.square(y-y_data))
+
+optimizer = tf.train.GradientDescentOptimizer(0.3)
+train = optimizer.minimize(loss)
+
+
+init = tf.global_variables_initializer()
+
+sess = tf.Session()
+sess.run(init)          # Very important
+
+for step in range(201):
+    sess.run(train)
+    if step % 20 == 0:
+        print(step, sess.run(Weights), sess.run(biases))
