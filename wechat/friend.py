@@ -63,6 +63,5 @@ for i in friends:
 # qm=raw_input("file name >>>:")
 aaa='weixin_'+time.strftime("%Y%m%d", time.localtime())+'.xls'
 file.save(aaa)
-itchat.send('made by junzi','filehelper')
 itchat.send('@%s@%s' % ('fil',aaa), 'filehelper')
 print ("over")
