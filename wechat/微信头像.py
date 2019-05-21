@@ -8,7 +8,7 @@ import PIL.Image as Image
 from os import listdir
 import math
 
-itchat.auto_login(enableCmdQR=True)
+itchat.auto_login(enableCmdQR=True)	#使用二维码在命令行登陆
 friends = itchat.get_friends(update=True)[0:]
 user = friends[0]["UserName"]
 print(user)
@@ -45,5 +45,5 @@ for i in pics:
 		if x == numline:
 			x = 0
 			y += 1
-toImage.save(user + ".png")
-itchat.send_image(user + ".png", 'filehelper')
+toImage.save(user + ".png")	#设置保存的文件
+itchat.send_image(user + ".png", 'filehelper') #通过文件传输助手发送到本地

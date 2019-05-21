@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-#从微信获取好友的签名，做成词云
-#2018-10-17 18:02:37
+# 从test.txt中抓取所有文字，做成词云
+# 2018-10-17 18:02:37
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import jieba

@@ -1,4 +1,6 @@
 # coding:utf-8
+# 抓取所有微信好友的信息，并且声成xls文件保存
+# 抓取了好友数量，昵称，备注名，省份城市，个性签名等
 
 import itchat,time,sys,xlwt
 
@@ -8,7 +10,7 @@ table = file.add_sheet('info',cell_overwrite_ok=True)
 
 
 # 登录-持续
-itchat.auto_login(enableCmdQR=2)
+itchat.auto_login(enableCmdQR=1)
 print(u"logged")
 # 获取好友列表
 friends = itchat.get_friends(update=True)[0:]
