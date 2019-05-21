@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+#从微信获取好友的头像，生成头像组
+#2019-5-21 15:00:50
+#完成
 import itchat
 import os
 import PIL.Image as Image

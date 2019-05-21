@@ -1,5 +1,13 @@
-import numpy
+test = b'hello world!'
+type(test)
+print(test)
+a=test + b'hahahahha'
+a
+type(a)
 
-data = [1,2,3,4,5,6]
-x = numpy.array(data)
-print(x)
+a = list(test)
+a
+b = list(b'hahahahaha')
+b
+a+b
+bytes(a+b)
