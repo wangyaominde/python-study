@@ -4,11 +4,12 @@
 #完成
 import itchat
 import os
+import shutil
 import PIL.Image as Image
 from os import listdir
 import math
 
-itchat.auto_login(enableCmdQR=True)	#使用二维码在命令行登陆
+itchat.auto_login(enableCmdQR=1)	#使用二维码在命令行登陆
 friends = itchat.get_friends(update=True)[0:]
 user = friends[0]["UserName"]
 print(user)
@@ -47,3 +48,5 @@ for i in pics:
 			y += 1
 toImage.save(user + ".png")	#设置保存的文件
 itchat.send_image(user + ".png", 'filehelper') #通过文件传输助手发送到本地
+shutil.rmtree(user)	#自动清理生成的文件（头像文件）
+os.remove(user + ".png") #清理生成的拼接好的头像
