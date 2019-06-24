@@ -10,7 +10,7 @@ table = file.add_sheet('info',cell_overwrite_ok=True)
 
 
 # 登录-持续
-itchat.auto_login(enableCmdQR=1)
+itchat.auto_login(enableCmdQR=0)
 print(u"logged")
 # 获取好友列表
 friends = itchat.get_friends(update=True)[0:]

@@ -9,7 +9,7 @@ import PIL.Image as Image
 from os import listdir
 import math
 
-itchat.auto_login(enableCmdQR=1)	#使用二维码在命令行登陆
+itchat.auto_login(enableCmdQR=0)	#使用二维码在命令行登陆
 friends = itchat.get_friends(update=True)[0:]
 user = friends[0]["UserName"]
 print(user)
