@@ -2,8 +2,9 @@
 
 import socket
 
-target_host = "127.0.0.1" #服务器端地址
-target_port = 51112  #必须与服务器的端口号一致
+#target_host = "127.0.0.1" #服务器端地址
+target_host = "clouddata.usr.cn" #服务器端地址
+target_port = 15000  #必须与服务器的端口号一致
 
 while True:
 
