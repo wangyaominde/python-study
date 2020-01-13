@@ -7,7 +7,7 @@ import time
 
 client = mqtt.Client()
 client.username_pw_set(username="#####", password="#####")
-client.connect("mqtt_server", 1883, 60)
+client.connect("23.105.201.9", 1883, 60)
 
 while 1:
 	p=os.popen("ping -c1 www.baidu.com | awk '{print$8}' | grep 'time'")
