@@ -1,5 +1,6 @@
 import requests
 from lxml import etree
+import os
 
 payload = {'key1': 'value1', 'key2': 'value2'}
 

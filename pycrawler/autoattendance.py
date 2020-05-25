@@ -5,7 +5,6 @@ import requests
 
 userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"
 header = {
-    # "origin": "https://passport.mafengwo.cn",
     "Referer": "http://ofweltoa.vicp.io:10880/login/Login.jsp",
     'User-Agent': userAgent,
 }
@@ -14,7 +13,7 @@ def attendancelogin(account, password):
     # 登录
     print ("开始模拟登录")
 
-    postUrl = "http://ofweltoa.vicp.io:10880/login/VerifyLogin.jsp"
+    postUrl = "http://ofweltoa.vicp.io:10880/login/Login.jsp"
     postData = {
         "loginfile":"/wui/theme/ecology8/page/login.jsp?templateId=3&logintype=1&gopage= ",
         "logintype": "1" ,
