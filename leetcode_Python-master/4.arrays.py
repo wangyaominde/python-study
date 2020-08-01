@@ -1,2 +1,11 @@
 #----coding------#
-'''md这个题不适合用python，等我搞好了编译环境用c写一下吧'''
+import numpy as np
+
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2) -> float:
+        return(np.median(nums1+nums2))
+
+a = Solution()
+nums1 = [1,2]
+nums2 = [3,4]
+print(a.findMedianSortedArrays(nums1,nums2))
